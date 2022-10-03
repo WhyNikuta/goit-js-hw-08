@@ -36,18 +36,18 @@ const savedCurrentTime = readItemStorage(STORAGE_KEY);
 const handleReload = () => {
   player
     .setCurrentTime(savedCurrentTime)
-    .then(function (seconds) {})
-    .catch(function (error) {
-      switch (error.name) {
-        case 'RangeError':
-          // the time was less than 0 or greater than the video’s duration
-          break;
+    // .then(function (seconds) {})
+    // .catch(function (error) {
+    //   switch (error.name) {
+    //     case 'RangeError':
+    //       // the time was less than 0 or greater than the video’s duration
+    //       break;
 
-        default:
-          // some other error occurred
-          break;
-      }
-    });
+    //     default:
+    //       // some other error occurred
+    //       break;
+    //   }
+    // });
 };
 
 document.addEventListener('DOMContentLoaded', handleReload);
